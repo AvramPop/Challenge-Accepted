@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AI.iml" filepath="$PROJECT_DIR$/.idea/modules/AI.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AI_main.iml" filepath="$PROJECT_DIR$/.idea/modules/AI_main.iml" group="AI" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AI_test.iml" filepath="$PROJECT_DIR$/.idea/modules/AI_test.iml" group="AI" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/team4.iml" filepath="$PROJECT_DIR$/.idea/modules/team4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/team4_main.iml" filepath="$PROJECT_DIR$/.idea/modules/team4_main.iml" group="team4" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/team4_test.iml" filepath="$PROJECT_DIR$/.idea/modules/team4_test.iml" group="team4" />
     </modules>
   </component>
 </project>
