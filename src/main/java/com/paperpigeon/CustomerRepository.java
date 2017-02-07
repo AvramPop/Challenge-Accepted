@@ -1,4 +1,4 @@
-package net.greetings;
+package com.paperpigeon;
 
 import java.util.List;
 
