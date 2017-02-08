@@ -1,13 +1,16 @@
 package com.paperpigeon.dto;
 
-/**
- * Created by dani on 2/7/17.
- */
+
 import com.paperpigeon.models.Todo;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.Size;
 
+/**
+ * A DTO (data transfer object) is meant to carry data between different processes,
+ * in our case between the DB and the controller.
+ * Every POJO should have this equivalent!
+ */
 public final class TodoDTO {
 
     private String id;
@@ -50,6 +53,4 @@ public final class TodoDTO {
     public void setTitle(String title) {
         this.title = title;
     }
-
-    //Constructor, getters, and setters are omitted
 }

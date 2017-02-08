@@ -2,6 +2,11 @@ package com.paperpigeon.models;
 
 import org.springframework.data.annotation.Id;
 
+/**
+ * This is a POJO(Plain Old Java Object), so its purpose is to model a entity
+ * that will be then handled by the DB, calls, and so on.
+ */
+
 public final class Todo {
 
     public static final int MAX_LENGTH_DESCRIPTION = 500;
@@ -74,14 +79,36 @@ public final class Todo {
 
         public Todo build() {
             Todo build = new Todo(this);
-
-            build.checkTitleAndDescription(build.getTitle(), build.getDescription());
-
-            return build;
+            if(build.checkTitleAndDescription(build.getTitle(), build.getDescription())){
+                return build;
+            }
+            throw new IllegalArgumentException();
         }
     }
 
-    private void checkTitleAndDescription(String title, String description) {
+    private boolean checkTitleAndDescription(String title, String description) {
+        if(title == null) {
+            System.err.println("Title cannot be null");
+            return false;
+        }
 
+        if(title.isEmpty()) {
+            System.err.println("Title cannot be empty");
+            return false;
+        }
+
+        if(title.length() > MAX_LENGTH_TITLE){
+            System.err.println("Title cannot be longer than " + MAX_LENGTH_TITLE + " characters");
+            return false;
+        }
+
+        if (description != null) {
+            if(description.length() > MAX_LENGTH_DESCRIPTION){
+                System.err.println("Description cannot be longer than " + MAX_LENGTH_DESCRIPTION + " characters");
+                return false;
+            }
+        }
+
+        return true;
     }
 }

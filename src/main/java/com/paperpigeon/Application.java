@@ -1,6 +1,5 @@
 package com.paperpigeon;
 
-import com.paperpigeon.delete.PersonRepository;
 import com.paperpigeon.repositories.TodoRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,8 +17,6 @@ import org.springframework.context.annotation.Configuration;
 @SpringBootApplication
 public class Application implements CommandLineRunner{
 
-    @Autowired
-    private PersonRepository personRepository;
     @Autowired
     private TodoRepository todoRepo;
 
