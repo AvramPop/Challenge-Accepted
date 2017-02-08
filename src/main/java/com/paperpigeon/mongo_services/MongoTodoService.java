@@ -1,8 +1,5 @@
 package com.paperpigeon.mongo_services;
 
-/**
- * Created by dani on 2/7/17.
- */
 import com.paperpigeon.dto.TodoDTO;
 import com.paperpigeon.repositories.TodoRepository;
 import com.paperpigeon.services.TodoService;
@@ -14,6 +11,12 @@ import java.util.List;
 import java.util.Optional;
 
 import static java.util.stream.Collectors.toList;
+
+/**
+ * This is the place where we implement the methods from the controller(here, TodoController)
+ * the way they behave and connect to the DB
+ * <p>!NEVER forget to save your changes in the DB!!</p>
+ */
 
 @Service
 public final class MongoTodoService implements TodoService {
@@ -76,11 +79,8 @@ public final class MongoTodoService implements TodoService {
 
     public void magic(String id){
         Todo todo = findTodoById(id);
-        System.out.println(todo + "-----*******-----" + todo.getTitle());
-        //System.out.println(id);
         todo.magic();
         todo = repository.save(todo);
-        //return new TodoDTO();//convertToDTO(todo);
     }
 
     private TodoDTO convertToDTO(Todo model) {
