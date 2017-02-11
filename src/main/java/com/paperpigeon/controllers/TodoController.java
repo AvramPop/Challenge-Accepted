@@ -32,29 +32,29 @@ public final class TodoController {
         return service.create(todoEntry);
     }
 
-    @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
-    TodoDTO delete(@PathVariable("id") String id) {
-        return service.delete(id);
+    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
+    TodoDTO delete(@RequestBody @Valid TodoDTO request) {
+        return service.delete(request.getId());
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/findall", method = RequestMethod.GET)
     List<TodoDTO> findAll() {
         return service.findAll();
     }
 
-    @RequestMapping(value = "{id}", method = RequestMethod.GET)
-    TodoDTO findById(@PathVariable("id") String id) {
+    @RequestMapping(value = "/findone/{id}", method = RequestMethod.GET)
+    TodoDTO findById(@PathVariable String id) {
         return service.findById(id);
     }
 
-    @RequestMapping(value = "{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/update", method = RequestMethod.PUT)
     TodoDTO update(@RequestBody @Valid TodoDTO todoEntry) {
         return service.update(todoEntry);
     }
 
-    @RequestMapping(value = "/magic/{id}", method = RequestMethod.PUT)
-    void magic(@PathVariable("id") String id){
-        service.magic(id);
+    @RequestMapping(value = "/magic", method = RequestMethod.PUT)
+    TodoDTO magic(@RequestBody @Valid TodoDTO request){
+        return service.magic(request.getId());
     }
 
     @ExceptionHandler
