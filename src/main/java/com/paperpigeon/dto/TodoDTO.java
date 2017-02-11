@@ -7,6 +7,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 /**
+ * This is the object we use as a information-holder for our REST calls. This means that we pass this object
+ * as body in our controller, if we want a body(for the id, for example).
+ *
  * A DTO (data transfer object) is meant to carry data between different processes,
  * in our case between the DB and the controller.
  * Every POJO should have this equivalent!
@@ -18,7 +21,7 @@ public final class TodoDTO {
     @Size(max = Todo.MAX_LENGTH_DESCRIPTION)
     private String description;
 
-    @NotEmpty
+    //@NotEmpty
     @Size(max = Todo.MAX_LENGTH_TITLE)
     private String title;
 

@@ -15,7 +15,7 @@ import static java.util.stream.Collectors.toList;
 /**
  * This is the place where we implement the methods from the controller(here, TodoController)
  * the way they behave and connect to the DB
- * <p>!NEVER forget to save your changes in the DB!!</p>
+ * <p>!NEVER forget to save your changes in the DB (obj = repository.save(obj))!!</p>
  */
 
 @Service
@@ -77,10 +77,11 @@ public final class MongoTodoService implements TodoService {
 
     }
 
-    public void magic(String id){
+    public TodoDTO magic(String id){
         Todo todo = findTodoById(id);
         todo.magic();
         todo = repository.save(todo);
+        return  convertToDTO(todo);
     }
 
     private TodoDTO convertToDTO(Todo model) {

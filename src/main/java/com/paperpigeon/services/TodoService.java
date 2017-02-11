@@ -23,5 +23,5 @@ public interface TodoService {
 
     TodoDTO update(TodoDTO todo);
 
-    void magic(String id);
+    TodoDTO magic(String id);
 }
