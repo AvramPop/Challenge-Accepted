@@ -53,7 +53,7 @@ public final class TodoController {
     }
 
     @RequestMapping(value = "/magic/{id}", method = RequestMethod.PUT)
-    void magic(@PathVariable("id") String id){
+    void magic(@PathVariable("id") String id) {
         service.magic(id);
     }
 
