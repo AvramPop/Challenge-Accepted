@@ -1,12 +1,14 @@
 package com.paperpigeon.models;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 /**
  * This is a POJO(Plain Old Java Object), so its purpose is to model a entity
  * that will be then handled by the DB, calls, and so on.
  */
-
+@Document(collection = "Todo")
 public final class Todo {
 
     public static final int MAX_LENGTH_DESCRIPTION = 500;
@@ -15,8 +17,10 @@ public final class Todo {
     @Id
     private String id;
 
+    @Field(value = "description")
     private String description;
 
+    @Field(value = "title")
     private String title;
 
     public Todo() {}
