@@ -33,9 +33,4 @@ public class Application extends SpringBootServletInitializer implements Command
         System.out.println(todoRepo);
         System.out.println("------------------------------------------------------------------");
     }
-
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(Application.class);
-    }
 }
