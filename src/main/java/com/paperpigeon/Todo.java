@@ -19,6 +19,7 @@ final class Todo {
     private Todo(Builder builder) {
         this.description = builder.description;
         this.title = builder.title;
+
     }
 
     static Builder getBuilder() {
@@ -43,6 +44,8 @@ final class Todo {
         this.title = title;
         this.description = description;
     }
+
+
 
     /**
      * We don't have to use the builder pattern here because the constructed

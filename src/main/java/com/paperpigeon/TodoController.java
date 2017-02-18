@@ -5,13 +5,7 @@ package com.paperpigeon;
  */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -52,6 +46,10 @@ final class TodoController {
     TodoDTO update(@RequestBody @Valid TodoDTO todoEntry) {
         return service.update(todoEntry);
     }
+
+    @RequestMapping(value="{id}", method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    TodoDTO duplicate(@PathVariable("id") String id) { return service.create(service.findById(id));}
 
     /*@ExceptionHandler
     @ResponseStatus(HttpStatus.NOT_FOUND)
