@@ -32,7 +32,6 @@ import java.util.Map;
 public final class TodoController {
 
     private final TodoService service;
-    private MessageSource messageSource;
 
     @Autowired
     TodoController(TodoService service) {
