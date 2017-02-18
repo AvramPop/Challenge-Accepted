@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c746b6d-a743-4877-bb7d-d1c83364013d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/ShowTodo.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/API/showAllTodos.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="1c746b6d-a743-4877-bb7d-d1c83364013d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -88,7 +84,7 @@
       <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
+            <state relative-caret-position="17">
               <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
@@ -98,10 +94,26 @@
       <file leaf-file-name="Todo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/models/Todo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="45" column="38" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+            <state relative-caret-position="561">
+              <caret line="40" column="18" lean-forward="false" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
               <folding>
-                <element signature="method#checkTitleAndDescription#0;class#Todo#0" expanded="false" />
+                <marker date="1487430782000" expanded="true" signature="512:603" ph="{...}" />
+                <marker date="1487430782000" expanded="false" signature="643:654" ph=" { " />
+                <marker date="1487430782000" expanded="false" signature="675:681" ph=" }" />
+                <marker date="1487430782000" expanded="false" signature="711:722" ph=" { " />
+                <marker date="1487430782000" expanded="false" signature="735:741" ph=" }" />
+                <marker date="1487430782000" expanded="false" signature="777:788" ph=" { " />
+                <marker date="1487430782000" expanded="false" signature="807:813" ph=" }" />
+                <marker date="1487430782000" expanded="false" signature="840:851" ph=" { " />
+                <marker date="1487430782000" expanded="false" signature="861:867" ph=" }" />
+                <marker date="1487430782000" expanded="true" signature="893:986" ph="{...}" />
+                <marker date="1487430782000" expanded="true" signature="1045:1175" ph="{...}" />
+                <marker date="1487430782000" expanded="true" signature="1181:1416" ph="/**...*/" />
+                <marker date="1487430782000" expanded="true" signature="1449:2070" ph="{...}" />
+                <marker date="1487430782000" expanded="true" signature="1605:1685" ph="{...}" />
+                <marker date="1487430782000" expanded="true" signature="1730:1798" ph="{...}" />
+                <marker date="1487430782000" expanded="true" signature="1828:2064" ph="{...}" />
+                <marker date="1487430782000" expanded="false" signature="2151:2875" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -110,7 +122,7 @@
       <file leaf-file-name="TodoService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/services/TodoService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
+            <state relative-caret-position="68">
               <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
@@ -120,7 +132,7 @@
       <file leaf-file-name="TodoRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/repositories/TodoRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
+            <state relative-caret-position="102">
               <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
               <folding />
             </state>
@@ -130,21 +142,19 @@
       <file leaf-file-name="MongoTodoService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/mongo_services/MongoTodoService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1206">
+            <state relative-caret-position="1139">
               <caret line="79" column="34" lean-forward="false" selection-start-line="79" selection-start-column="34" selection-end-line="79" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TodoController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TodoController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/controllers/TodoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
+            <state relative-caret-position="17">
               <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -152,22 +162,21 @@
       <file leaf-file-name="TodoDTO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/dto/TodoDTO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="170">
               <caret line="13" column="47" lean-forward="false" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
-              <folding />
+              <folding>
+                <marker date="1487430782000" expanded="true" signature="673:721" ph="@{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShowTodo.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ShowTodo.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/API/ShowTodo.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="450">
-                <caret line="38" column="38" lean-forward="false" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
-                <folding />
-              </first_editor>
-              <second_editor />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -175,7 +184,7 @@
       <file leaf-file-name="TodoNotFoundException.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/exceptions/TodoNotFoundException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
+            <state relative-caret-position="153">
               <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
               <folding>
                 <element signature="e#245#246#0" expanded="true" />
@@ -185,15 +194,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="showAllTodos.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/API/showAllTodos.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="299">
-                <caret line="45" column="2" lean-forward="false" selection-start-line="45" selection-start-column="2" selection-end-line="47" selection-end-column="16" />
-                <folding />
-              </first_editor>
-              <second_editor />
+      <file leaf-file-name="ShowAllTodos.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/API/ShowAllTodos.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -214,7 +220,7 @@
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="$PROJECT_DIR$/../../gradle-3.3" />
+        <entry key="$PROJECT_DIR$" value="C:\Program Files\gradle-3.3" />
       </map>
     </option>
     <option name="myGradleVersions">
@@ -444,7 +450,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="2972775244845" />
+        <entry key="$PROJECT_DIR$" value="2974861564000" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -480,141 +486,75 @@
               <option name="name" value="team4" />
               <option name="projectBuildClasspath">
                 <list>
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/ivy" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/process-services" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/core" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/dependency-management" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/native" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/platform-native" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/resources-s3" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/ide-play" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/logging" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/signing" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/language-groovy" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/wrapper" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/antlr" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/jacoco" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/launcher" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/osgi" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/cli" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/platform-play" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/announce" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/composite-builds" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/workers" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/maven" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/tooling-api" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/resources-http" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/platform-jvm" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/resources" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/plugins" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/scala" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/ide" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/publish" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/internal-android-performance-testing" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/ide-native" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/resources-sftp" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/open-api" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/language-scala" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/internal-testing" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/jetty" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/diagnostics" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/base-services" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/language-jvm" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/messaging" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/installation-beacon" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/testing-jvm" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/plugin-development" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/internal-performance-testing" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/language-java" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/language-native" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/tooling-api-builders" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/plugin-use" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/testing-base" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/jvm-services" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/build-cache-http" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/code-quality" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/test-kit" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/platform-base" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/reporting" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/internal-integ-testing" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/ui" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/model-core" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/testing-native" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/javascript" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/ear" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/base-services-groovy" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/build-comparison" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/build-init" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/src/model-groovy" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-base-services-groovy-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-docs-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-wrapper-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-open-api-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-cli-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/groovy-all-2.4.7.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-logging-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-launcher-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-model-core-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-messaging-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/ant-launcher-1.9.6.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-native-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-model-groovy-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-installation-beacon-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-base-services-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-version-info-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-tooling-api-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-resources-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-process-services-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-jvm-services-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-ui-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-core-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/ant-1.9.6.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/gradle-script-kotlin-0.5.1.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-language-java-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-plugin-use-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-plugin-development-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-osgi-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-testing-jvm-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-ide-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-platform-play-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-publish-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-workers-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-resources-sftp-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-language-groovy-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-build-comparison-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-diagnostics-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-antlr-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-jacoco-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-ide-native-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-composite-builds-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-testing-native-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-build-cache-http-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-reporting-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-test-kit-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-platform-base-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-maven-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-tooling-api-builders-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-platform-jvm-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-code-quality-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-build-init-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/ivy-2.2.0.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-javascript-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-plugins-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-platform-native-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-resources-http-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-resources-s3-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-ide-play-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-ivy-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-ear-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-dependency-management-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-jetty-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-scala-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-testing-base-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-language-jvm-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-language-scala-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-language-native-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-signing-3.3.jar" />
-                  <option value="$PROJECT_DIR$/../../gradle-3.3/lib/plugins/gradle-announce-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/ant-1.9.6.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/ant-launcher-1.9.6.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-base-services-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-base-services-groovy-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-cli-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-core-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-docs-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-installation-beacon-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-jvm-services-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-launcher-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-logging-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-messaging-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-model-core-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-model-groovy-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-native-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-open-api-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-process-services-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-resources-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-script-kotlin-0.5.1.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-tooling-api-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-ui-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-version-info-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/gradle-wrapper-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/groovy-all-2.4.7.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-announce-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-antlr-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-build-cache-http-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-build-comparison-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-build-init-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-code-quality-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-composite-builds-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-dependency-management-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-diagnostics-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-ear-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-ide-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-ide-native-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-ide-play-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-ivy-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-jacoco-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-javascript-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-jetty-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-language-groovy-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-language-java-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-language-jvm-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-language-native-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-language-scala-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-maven-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-osgi-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-platform-base-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-platform-jvm-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-platform-native-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-platform-play-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-plugin-development-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-plugin-use-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-plugins-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-publish-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-reporting-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-resources-http-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-resources-s3-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-resources-sftp-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-scala-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-signing-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-test-kit-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-testing-base-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-testing-jvm-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-testing-native-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-tooling-api-builders-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/gradle-workers-3.3.jar" />
+                  <option value="C:/Program Files/gradle-3.3/lib/plugins/ivy-2.2.0.jar" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
                 </list>
@@ -686,8 +626,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1366" />
-    <option name="height" value="743" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -705,8 +647,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -715,7 +655,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="team4" />
+              <option name="myItemId" value="pp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -725,7 +665,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="team4" />
+              <option name="myItemId" value="pp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -739,7 +679,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="team4" />
+              <option name="myItemId" value="pp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -757,7 +697,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="team4" />
+              <option name="myItemId" value="pp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -783,7 +723,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="team4" />
+              <option name="myItemId" value="pp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -807,22 +747,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="team4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="team4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="API" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -830,7 +758,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../code/CodeGlance/build.gradle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
   </component>
   <component name="RecentsManager">
@@ -1027,19 +955,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="executeSpecs" factoryName="Gauge Execution">
-      <setting name="environment" value="" />
-      <setting name="specsToExecute" value="" />
-      <setting name="tags" value="" />
-      <setting name="parallelNodes" value="" />
-      <setting name="execInParallel" value="false" />
-      <setting name="programParameters" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="moduleName" value="" />
-      <envMap />
-      <setting name="rowsRange" value="" />
-      <method />
-    </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Application" />
       <item index="1" class="java.lang.String" itemvalue="Gradle.AI [build]" />
@@ -1078,27 +993,33 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="743" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868218" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3116279" sideWeight="0.5058565" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20620155" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868218" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17155425" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0659824" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17130308" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0658858" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868218" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1261,20 +1182,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="108">
-            <caret line="6" column="8" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/exceptions.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
+        <state relative-caret-position="17">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
@@ -1282,7 +1194,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/repositories/TodoRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
+        <state relative-caret-position="102">
           <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
           <folding />
         </state>
@@ -1291,17 +1203,33 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/misc.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/models/Todo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="45" column="38" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+        <state relative-caret-position="561">
+          <caret line="40" column="18" lean-forward="false" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
           <folding>
-            <element signature="method#checkTitleAndDescription#0;class#Todo#0" expanded="false" />
+            <marker date="1487430782000" expanded="true" signature="512:603" ph="{...}" />
+            <marker date="1487430782000" expanded="false" signature="643:654" ph=" { " />
+            <marker date="1487430782000" expanded="false" signature="675:681" ph=" }" />
+            <marker date="1487430782000" expanded="false" signature="711:722" ph=" { " />
+            <marker date="1487430782000" expanded="false" signature="735:741" ph=" }" />
+            <marker date="1487430782000" expanded="false" signature="777:788" ph=" { " />
+            <marker date="1487430782000" expanded="false" signature="807:813" ph=" }" />
+            <marker date="1487430782000" expanded="false" signature="840:851" ph=" { " />
+            <marker date="1487430782000" expanded="false" signature="861:867" ph=" }" />
+            <marker date="1487430782000" expanded="true" signature="893:986" ph="{...}" />
+            <marker date="1487430782000" expanded="true" signature="1045:1175" ph="{...}" />
+            <marker date="1487430782000" expanded="true" signature="1181:1416" ph="/**...*/" />
+            <marker date="1487430782000" expanded="true" signature="1449:2070" ph="{...}" />
+            <marker date="1487430782000" expanded="true" signature="1605:1685" ph="{...}" />
+            <marker date="1487430782000" expanded="true" signature="1730:1798" ph="{...}" />
+            <marker date="1487430782000" expanded="true" signature="1828:2064" ph="{...}" />
+            <marker date="1487430782000" expanded="false" signature="2151:2875" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/mongo_services/MongoTodoService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1206">
+        <state relative-caret-position="1139">
           <caret line="79" column="34" lean-forward="false" selection-start-line="79" selection-start-column="34" selection-end-line="79" selection-end-column="34" />
           <folding />
         </state>
@@ -1309,7 +1237,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/services/TodoService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
+        <state relative-caret-position="68">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
@@ -1318,25 +1246,17 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/request_body/TodoRequestBody.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/dto/TodoDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="170">
           <caret line="13" column="47" lean-forward="false" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/controllers/TodoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1487430782000" expanded="true" signature="673:721" ph="@{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/exceptions/TodoNotFoundException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
+        <state relative-caret-position="153">
           <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
           <folding>
             <element signature="e#245#246#0" expanded="true" />
@@ -1345,25 +1265,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/API/showAllTodos.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="299">
-            <caret line="45" column="2" lean-forward="false" selection-start-line="45" selection-start-column="2" selection-end-line="47" selection-end-column="16" />
-            <folding />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/API/ShowAllTodos.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/API/ShowTodo.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="450">
-            <caret line="38" column="38" lean-forward="false" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
-            <folding />
-          </first_editor>
-          <second_editor />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paperpigeon/controllers/TodoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
