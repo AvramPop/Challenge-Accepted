@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.stormpath.tutorial.controller;
+/*package com.paperpigeon.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ErrorAttributes;
@@ -29,7 +29,7 @@ import java.util.Map;
 
 /**
  * @since 1.0.RC5
- */
+ *//*
 @Controller
 public class RestrictedErrorController implements ErrorController {
     private static final String ERROR_PATH = "/error";
@@ -53,4 +53,4 @@ public class RestrictedErrorController implements ErrorController {
         model.addAttribute("errors", errorMap);
         return "error";
     }
-}
+}*/

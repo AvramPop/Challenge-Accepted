@@ -1,4 +1,4 @@
-package com.paperpigeon.exceptions;
+package com.paperpigeon.exception;
 
 /**
  * Created by dani on 2/8/17.

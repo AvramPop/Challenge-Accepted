@@ -1,7 +1,7 @@
-package com.paperpigeon.repositories;
+package com.paperpigeon.repository;
 
 
-import com.paperpigeon.models.Todo;
+import com.paperpigeon.model.Todo;
 import org.springframework.data.repository.Repository;
 
 import java.util.List;

@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.stormpath.tutorial.controller;
+/*package com.paperpigeon.controller;
 
+import com.paperpigeon.service.HelloService;
 import com.stormpath.sdk.servlet.account.AccountResolver;
-import com.stormpath.tutorial.service.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @since 1.0.RC5
- */
+ *//*
 @Controller
 public class HelloController {
 
@@ -57,4 +57,4 @@ public class HelloController {
         return "restricted";
     }
 
-}
+}*/

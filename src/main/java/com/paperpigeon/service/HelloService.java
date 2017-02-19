@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ *//*
 package com.paperpigeon.service;
 
 import com.stormpath.sdk.account.Account;
@@ -22,11 +22,12 @@ import org.springframework.stereotype.Service;
 /**
  * @since 1.0.RC5
  */
-@Service
+/*@Service
 public class HelloService {
-    @PreAuthorize("hasAuthority(@groups.USER)")
+    @PreAuthorize("hasAuthority('https://api.stormpath.com/v1/groups/5f46JL3cvieUFlAgBhhjsy')")
     public String sayHello(Account account) {
         return "Hello, " + account.getGivenName() +
             ". You have the required permissions to access this restricted resource.";
     }
 }
+*/

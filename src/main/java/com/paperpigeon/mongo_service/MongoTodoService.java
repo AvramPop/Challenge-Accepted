@@ -1,9 +1,9 @@
-package com.paperpigeon.mongo_services;
+package com.paperpigeon.mongo_service;
 
 import com.paperpigeon.dto.TodoDTO;
-import com.paperpigeon.repositories.TodoRepository;
-import com.paperpigeon.services.TodoService;
-import com.paperpigeon.models.Todo;
+import com.paperpigeon.repository.TodoRepository;
+import com.paperpigeon.service.TodoService;
+import com.paperpigeon.model.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

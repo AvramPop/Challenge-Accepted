@@ -1,26 +1,15 @@
-package com.paperpigeon.controllers;
+package com.paperpigeon.controller;
 
 import com.paperpigeon.dto.TodoDTO;
-import com.paperpigeon.dto.ValidationErrorDTO;
-import com.paperpigeon.exceptions.TodoNotFoundException;
-import com.paperpigeon.services.TodoService;
+import com.paperpigeon.exception.TodoNotFoundException;
+import com.paperpigeon.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.MessageSource;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpStatus;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
-import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
-import java.util.Map;
 
 /**
  * This is the place where the whole magic happens. Here we create new REST calls
@@ -28,7 +17,7 @@ import java.util.Map;
  */
 
 @RestController
-@RequestMapping("/todo")
+@RequestMapping("/api/todo")
 public final class TodoController {
 
     private final TodoService service;

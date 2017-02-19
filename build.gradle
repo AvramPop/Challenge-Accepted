@@ -44,4 +44,5 @@ dependencies {
     compile("com.fasterxml.jackson.core:jackson-databind")
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
     compile("org.springframework.boot:spring-boot-devtools")
+    compile 'com.stormpath.spring:stormpath-default-spring-boot-starter:1.5.4'
 }
