@@ -1,7 +1,7 @@
 package com.paperpigeon.dto;
 
 
-import com.paperpigeon.models.Todo;
+import com.paperpigeon.model.Todo;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.Size;

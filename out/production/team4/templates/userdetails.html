@@ -1,0 +1,46 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--/*/ <th:block th:include="fragments/head :: head"/> /*/-->
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="box col-md-6 col-md-offset-3">
+            <div class="stormpath-header">
+                <img src="https://stormpath.com/images/template/logo-nav.png"/>
+            </div>
+
+            <h1 th:inline="text">Hello, [[${account.fullName}]]!</h1>
+
+            <h2>You belong to these groups:</h2>
+            <table class="table table-bordered  ">
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+                <tr th:each="group: ${account.groups}">
+                    <td th:text="${group.name}"/>
+                    <td th:text="${group.description}"/>
+                </tr>
+            </table>
+
+            <h2>You have these permissions:</h2>
+            <table class="table table-bordered  ">
+                <tr>
+                    <th>Source</th>
+                    <th>Spring Security Permissions</th>
+                </tr>
+                <tr th:each="permission: ${aggregatePermissionsModel}">
+                    <td th:text="${permission.key}"/>
+                    <td>
+                        <span th:each="value: ${permission.value}" th:inline="text">[[${value}]]<br/></span>
+                    </td>
+                </tr>
+            </table>
+
+            <a href="/" class="btn btn-primary">Go Home</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
