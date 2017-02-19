@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.stormpath.sdk:stormpath-sdk-httpclient:1.5.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.stormpath.sdk/stormpath-sdk-httpclient/1.5.4/1d664bb93f516f0bad7b71a6304929adca94b347/stormpath-sdk-httpclient-1.5.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.stormpath.sdk/stormpath-sdk-httpclient/1.5.4/50d8eb3d6ef2a097a252a9600d078b58af356f65/stormpath-sdk-httpclient-1.5.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
