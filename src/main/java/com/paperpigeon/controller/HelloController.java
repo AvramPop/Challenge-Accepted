@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*package com.paperpigeon.controller;
+package com.paperpigeon.controller;
 
 import com.paperpigeon.service.HelloService;
 import com.stormpath.sdk.servlet.account.AccountResolver;
@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @since 1.0.RC5
- *//*
+ */
 @Controller
 public class HelloController {
 
@@ -48,6 +48,11 @@ public class HelloController {
         return "home";
     }
 
+    @RequestMapping("/index")
+    String index(HttpServletRequest req, Model model) {
+        return "index";
+    }
+
     @RequestMapping("/restricted")
     String restricted(HttpServletRequest req, Model model) {
         String msg = helloService.sayHello(
@@ -57,4 +62,8 @@ public class HelloController {
         return "restricted";
     }
 
-}*/
+    @RequestMapping("/boss_dani")
+    String boss_dani(HttpServletRequest req, Model model) {
+        return "boss_dani";
+    }
+}
