@@ -2,7 +2,6 @@ package com.paperpigeon.dto;
 
 
 import com.paperpigeon.model.Todo;
-import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.Size;
 
@@ -19,9 +18,9 @@ public final class TodoDTO {
     private String id;
 
     @Size(max = Todo.MAX_LENGTH_DESCRIPTION)
-    private String description = "";
+    private String description;
 
-    @NotEmpty
+    //@NotEmpty
     @Size(max = Todo.MAX_LENGTH_TITLE)
     private String title;
 

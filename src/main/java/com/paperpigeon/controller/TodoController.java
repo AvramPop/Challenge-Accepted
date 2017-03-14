@@ -5,7 +5,6 @@ import com.paperpigeon.exception.TodoNotFoundException;
 import com.paperpigeon.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -29,7 +28,7 @@ public final class TodoController {
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    TodoDTO create(@RequestBody @Valid TodoDTO todoEntry){
+    TodoDTO create(@RequestBody @Valid TodoDTO todoEntry) {
         return service.create(todoEntry);
     }
 
