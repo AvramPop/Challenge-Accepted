@@ -22,4 +22,6 @@ public interface AdminService {
 
     AdminDTO findById(String id);
 
+    AdminDTO findByUserAndPassword(String password,String email);
+
 }

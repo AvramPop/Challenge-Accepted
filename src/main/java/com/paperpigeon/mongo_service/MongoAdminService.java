@@ -54,7 +54,7 @@ public class MongoAdminService implements AdminService {
 
     @Override
     public List<AdminDTO> findAll() {
-        List<Admin> adminList =repository.findAll();
+        List<Admin> adminList = repository.findAll();
         return convertToDTOs(adminList);
     }
 
@@ -62,6 +62,16 @@ public class MongoAdminService implements AdminService {
     public AdminDTO findById(String id) {
         Admin found = findAdminById(id);
         return convertToDTO(found);
+    }
+
+    @Override
+    public AdminDTO findByUserAndPassword(String password, String email) {
+        List<Admin> adminList = repository.findAll();
+        for (Admin admin : adminList) {
+            if (admin.getPassword().equals(password) && admin.getEmail().equals(email))
+                return convertToDTO(admin);
+        }
+        return null;
     }
 
     private Admin findAdminById(String id) {
@@ -80,7 +90,7 @@ public class MongoAdminService implements AdminService {
     }
 
     private List<AdminDTO> convertToDTOs(List<Admin> adminEntries) {
-        return adminEntries.stream() .map(this::convertToDTO)
+        return adminEntries.stream().map(this::convertToDTO)
                 .collect(toList());
     }
 
