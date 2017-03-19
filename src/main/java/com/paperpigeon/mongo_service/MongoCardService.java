@@ -75,7 +75,6 @@ public final class MongoCardService implements CardService {
     private Card findCardById(String id) {
         Optional<Card> result = repository.findOne(id);
         return result.orElseThrow(() -> new NullPointerException(id));
-
     }
 
     public CardDTO magic(String id){

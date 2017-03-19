@@ -101,7 +101,7 @@ public final class Card {
             throw new IllegalArgumentException();
         }
     }
-//add imagesmth here
+
     private boolean checkInfo(String title, String message, String imagePath) {
         if(title == null) {
             System.err.println("Title cannot be null");
@@ -110,6 +110,16 @@ public final class Card {
 
         if(title.isEmpty()) {
             System.err.println("Title cannot be empty");
+            return false;
+        }
+
+        if(imagePath == null) {
+            System.err.println("Image path cannot be null");
+            return false;
+        }
+
+        if(imagePath.isEmpty()) {
+            System.err.println("Image path cannot be empty");
             return false;
         }
 
