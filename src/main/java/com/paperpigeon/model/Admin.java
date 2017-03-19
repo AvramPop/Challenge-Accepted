@@ -4,6 +4,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import javax.security.auth.login.LoginException;
+
 /**
  * Created by Laura on 3/15/2017.
  */
@@ -19,10 +21,12 @@ public class Admin {
     private String email;
     @Field(value = "password")
     private String password;
-
+    @Field(value = "isLoggedIn")
+    private boolean isLoggedIn;
 
     public static final int MAX_NUMBER_OF_CHARACTERS = 50;
     public static final int MIN_NUMBER_OF_CHARACTERS = 2;
+
 
     private Admin(Builder builder) {
         this.firstName = builder.firstName;
@@ -75,12 +79,20 @@ public class Admin {
         this.password = password;
     }
 
+    public boolean getIsLoggedIn() {
+        return isLoggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        isLoggedIn = loggedIn;
+    }
+
 
     public void update(String firstName, String lastName, String email, String password) {
-        checkFirstNameLastNameAndEmail(firstName,lastName,email,password);
-        this.firstName =firstName;
+        checkFirstNameLastNameAndEmail(firstName, lastName, email, password);
+        this.firstName = firstName;
         this.lastName = lastName;
-        this.email =email;
+        this.email = email;
         this.password = password;
     }
 
@@ -119,14 +131,14 @@ public class Admin {
 
         public Admin build() {
             Admin build = new Admin(this);
-            if (build.checkFirstNameLastNameAndEmail(build.getFirstName(), build.getLastName(), build.getEmail(),build.getPassword())) {
+            if (build.checkFirstNameLastNameAndEmail(build.getFirstName(), build.getLastName(), build.getEmail(), build.getPassword())) {
                 return build;
             }
             throw new IllegalArgumentException();
         }
     }
 
-    private boolean checkFirstNameLastNameAndEmail(String firstName, String lastName, String email,String password) {
+    private boolean checkFirstNameLastNameAndEmail(String firstName, String lastName, String email, String password) {
         if (firstName == null) {
             System.err.println("First name cannot be null");
             return false;
@@ -182,6 +194,31 @@ public class Admin {
             }
         }
         return containsDigit;
+    }
+
+    public void login(String email, String password) {
+        if (getIsLoggedIn()) try {
+            throw new LoginException("Already logged in");
+        } catch (LoginException e) {
+            e.printStackTrace();
+        }
+        if (this.getPassword().equals(password) && this.getEmail().equals(email)) {
+            isLoggedIn = true;
+            System.out.println("Logged in successfully");
+        }
+    }
+
+    public void logout(String email, String password) {
+        if (getIsLoggedIn()) {
+            isLoggedIn = false;
+            System.out.println("Logged out successfully");
+        } else {
+            try {
+                throw new LoginException("Already logged out");
+            } catch (LoginException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 

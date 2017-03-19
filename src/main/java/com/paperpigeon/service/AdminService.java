@@ -14,7 +14,7 @@ public interface AdminService {
 
     AdminDTO create(AdminDTO adminDTO);
 
-    AdminDTO delete(String id );
+    AdminDTO delete(String id);
 
     AdminDTO update(AdminDTO adminDTO);
 
@@ -22,6 +22,11 @@ public interface AdminService {
 
     AdminDTO findById(String id);
 
-    AdminDTO findByUserAndPassword(String password,String email);
+    AdminDTO findByUserAndPassword(String password, String email);
+
+    AdminDTO login(String email, String password);
+
+    AdminDTO logout(String email, String password);
+
 
 }

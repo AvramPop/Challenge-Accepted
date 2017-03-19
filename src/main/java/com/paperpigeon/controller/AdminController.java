@@ -45,8 +45,18 @@ public final class AdminController {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    AdminDTO update(@RequestBody @Valid AdminDTO todoEntry) {
-        return service.update(todoEntry);
+    AdminDTO update(@RequestBody @Valid AdminDTO adminEntry) {
+        return service.update(adminEntry);
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    AdminDTO login(@RequestBody @Valid AdminDTO adminEntry) {
+        return service.login(adminEntry.getEmail(),adminEntry.getPassword());
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    AdminDTO logout(@RequestBody @Valid AdminDTO adminEntry) {
+        return service.logout(adminEntry.getEmail(),adminEntry.getPassword());
     }
 
     @ExceptionHandler

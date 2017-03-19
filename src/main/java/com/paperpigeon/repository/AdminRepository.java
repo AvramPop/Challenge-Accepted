@@ -21,4 +21,8 @@ public interface AdminRepository extends Repository<Admin, String> {
     Admin save(Admin saved);
 
     Admin findAdminById(String id);
+
+    Admin login(String email, String password);
+
+    Admin logut(String email, String password);
 }

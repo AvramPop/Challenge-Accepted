@@ -74,6 +74,30 @@ public class MongoAdminService implements AdminService {
         return null;
     }
 
+    @Override
+    public AdminDTO login(String email, String password) {
+        List<Admin> adminList = repository.findAll();
+        for (Admin admin : adminList) {
+            if (admin.getPassword().equals(password) && admin.getEmail().equals(email)){
+            admin.setLoggedIn(true);
+            return convertToDTO(admin);
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public AdminDTO logout(String email, String password) {
+        List<Admin> adminList = repository.findAll();
+        for (Admin admin : adminList) {
+            if(admin.getIsLoggedIn()){
+                admin.setLoggedIn(false);
+                return convertToDTO(admin);
+            }
+        }
+        return null;
+    }
+
     private Admin findAdminById(String id) {
         Optional<Admin> result = repository.findOne(id);
         return result.orElseThrow(() -> new NullPointerException(id));

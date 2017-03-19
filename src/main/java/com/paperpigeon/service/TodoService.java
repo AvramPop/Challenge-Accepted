@@ -28,4 +28,6 @@ public interface TodoService {
     TodoDTO update(TodoDTO todo);
 
     TodoDTO magic(String id);
+
+
 }

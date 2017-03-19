@@ -30,6 +30,11 @@ public final class AdminDTO {
     @NotEmpty
     private String password;
 
+
+    @NotNull
+    @NotEmpty
+    private boolean isLoggedIn;
+
     public String getId() {
         return id;
     }
@@ -40,6 +45,14 @@ public final class AdminDTO {
 
     public String getPassword() {
         return password;
+    }
+
+    public boolean getIsLoggedIn() {
+        return isLoggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        isLoggedIn = loggedIn;
     }
 
     public void setPassword(String password) {
@@ -69,5 +82,6 @@ public final class AdminDTO {
     public void setEmail(String email) {
         this.email = email;
     }
+
 
 }
