@@ -11,7 +11,7 @@ import java.util.List;
  * If you want to add a new method, add it here, because the
  * DB service implements this interface.
  */
-@Service
+
 public interface CardService {
 
     CardDTO create(CardDTO card);

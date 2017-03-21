@@ -6,6 +6,7 @@ import com.paperpigeon.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -38,8 +39,10 @@ public final class TodoController {
     }
 
     @RequestMapping(value = "/findall", method = RequestMethod.GET)
-    List<TodoDTO> findAll() {
-        return service.findAll();
+    ModelAndView findAll() {
+        ModelAndView result = new ModelAndView("user/list");
+        result.addObject("users", service.findAll());
+        return result;
     }
 
     @RequestMapping(value = "/findone/{id}", method = RequestMethod.GET)

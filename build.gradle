@@ -43,5 +43,6 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter")
     compile("org.springframework:spring-web")
     compile("com.fasterxml.jackson.core:jackson-databind")
+    compile("org.springframework.boot:spring-boot-starter-freemarker")
     testCompile("junit:junit")
 }
