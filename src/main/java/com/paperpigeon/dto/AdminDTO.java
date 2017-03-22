@@ -1,34 +1,36 @@
 package com.paperpigeon.dto;
 
-import com.paperpigeon.model.Admin;
-import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.validation.constraints.NotNull;
+import com.paperpigeon.model.Admin;
+
 import javax.validation.constraints.Size;
 
 /**
- * Created by Laura on 3/15/2017.
+ * This is the object we use as a information-holder for our REST calls. This means that we pass this object
+ * as body in our controller, if we want a body(for the id, for example).
+ *
+ * A DTO (data transfer object) is meant to carry data between different processes,
+ * in our case between the DB and the controller.
+ * Every POJO should have this equivalent!
  */
 public final class AdminDTO {
 
     private String id;
-    @NotNull
-    @NotEmpty
-    @Size(max = Admin.MAX_NUMBER_OF_CHARACTERS)
 
-    private String firstName;
-    @NotNull
-    @NotEmpty
-    @Size(max = Admin.MAX_NUMBER_OF_CHARACTERS)
-    private String lastName;
-
-    @NotNull
-    @NotEmpty
+        @Size(max = Admin.MAX_LENGTH_EMAIL)
     private String email;
 
-    @NotNull
-    @NotEmpty
+    //@NotEmpty
+    @Size(max = Admin.MAX_LENGTH_PASSWORD)
     private String password;
+
+    public AdminDTO findAdminById(String id){
+        if(this.id.equals(id)){
+            return this;
+        } else {
+            return null;
+        }
+    }
 
     public String getId() {
         return id;
@@ -36,30 +38,6 @@ public final class AdminDTO {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -70,4 +48,11 @@ public final class AdminDTO {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

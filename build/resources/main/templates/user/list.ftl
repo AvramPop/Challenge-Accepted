@@ -39,7 +39,7 @@
 
         </table>
 
-        <form class="navbar-form navbar-left" role="search">
+        <form class="navbar-form navbar-left" role="search" action="">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
           </div>
