@@ -1,6 +1,8 @@
 package com.paperpigeon.mongo_service;
 
 import com.paperpigeon.dto.UserDTO;
+import com.paperpigeon.exception.ObjectAlreadyInDB;
+import com.paperpigeon.model.Admin;
 import com.paperpigeon.repository.UserRepository;
 import com.paperpigeon.service.UserService;
 import com.paperpigeon.model.User;
@@ -29,7 +31,12 @@ public final class MongoUserService implements UserService {
     }
 
     @Override
-    public UserDTO create(UserDTO user) {
+    public UserDTO create(UserDTO user) throws ObjectAlreadyInDB {
+        for(User userEntry : repository.findAll()){
+            if(userEntry.getEmail().equals(user.getEmail())) {
+                throw new ObjectAlreadyInDB("User");
+            }
+        }
         User persisted = User.getBuilder()
                 .password(user.getPassword())
                 .email(user.getEmail())
@@ -51,6 +58,17 @@ public final class MongoUserService implements UserService {
         return convertToDTOs(userEntries);
     }
 
+    public boolean login(UserDTO userToLogin) {
+        List<User> userEntries = repository.findAll();
+        for(User user : userEntries){
+            if(userToLogin.getEmail().equals(user.getEmail())
+                    && userToLogin.getPassword().equals(user.getPassword())){
+                return true;
+            }
+        }
+        return false;
+    }
+
     private List<UserDTO> convertToDTOs(List<User> models) {
         return models.stream()
                 .map(this::convertToDTO)
@@ -66,7 +84,9 @@ public final class MongoUserService implements UserService {
     @Override
     public UserDTO update(UserDTO user) {
         User updated = findUserById(user.getId());
-        updated.update(user.getEmail(), user.getPassword());
+        String password = user.getPassword() == null ? updated.getPassword() : user.getPassword(),
+                email = user.getEmail() == null ? updated.getEmail() : user.getEmail();
+        updated.update(password, email);
         updated = repository.save(updated);
         return convertToDTO(updated);
     }

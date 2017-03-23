@@ -1,6 +1,7 @@
 package com.paperpigeon.controller;
 
 import com.paperpigeon.dto.UserDTO;
+import com.paperpigeon.exception.ObjectAlreadyInDB;
 import com.paperpigeon.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,10 +27,15 @@ public final class UserController {
         this.service = service;
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     UserDTO create(@RequestBody @Valid UserDTO userEntry) {
-        return service.create(userEntry);
+        try {
+            return service.create(userEntry);
+        } catch (ObjectAlreadyInDB e) {
+            System.out.println((e.getMessage()));
+        }
+        return null;
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
@@ -38,10 +44,11 @@ public final class UserController {
     }
 
     @RequestMapping(value = "/findall", method = RequestMethod.GET)
-    ModelAndView findAll() {
-        ModelAndView result = new ModelAndView("user/list");
+    List<UserDTO> findAll() {
+        return service.findAll();
+        /*ModelAndView result = new ModelAndView("user/list");
         result.addObject("users", service.findAll());
-        return result;
+        return result;*/
     }
 
     @RequestMapping(value = "/findone/{id}", method = RequestMethod.GET)
@@ -52,5 +59,10 @@ public final class UserController {
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
     UserDTO update(@RequestBody @Valid UserDTO userEntry) {
         return service.update(userEntry);
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    boolean login(@RequestBody @Valid UserDTO userEntry) {
+        return service.login(userEntry);
     }
 }

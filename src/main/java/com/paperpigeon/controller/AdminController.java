@@ -1,6 +1,10 @@
 package com.paperpigeon.controller;
 
 import com.paperpigeon.dto.AdminDTO;
+import com.paperpigeon.dto.UserDTO;
+import com.paperpigeon.exception.CardNotFoundException;
+import com.paperpigeon.exception.ObjectAlreadyInDB;
+import com.paperpigeon.exception.UserNotFoundException;
 import com.paperpigeon.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,10 +30,15 @@ public final class AdminController {
         this.service = service;
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     AdminDTO create(@RequestBody @Valid AdminDTO adminEntry) {
-        return service.create(adminEntry);
+        try {
+            return service.create(adminEntry);
+        } catch (ObjectAlreadyInDB e) {
+            System.out.println((e.getMessage()));
+        }
+        return null;
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
@@ -38,10 +47,11 @@ public final class AdminController {
     }
 
     @RequestMapping(value = "/findall", method = RequestMethod.GET)
-    ModelAndView findAll() {
-        ModelAndView result = new ModelAndView("admin/list");
+    List<AdminDTO> findAll() {
+        return service.findAll();
+        /*ModelAndView result = new ModelAndView("admin/list");
         result.addObject("admins", service.findAll());
-        return result;
+        return result;*/
     }
 
     @RequestMapping(value = "/findone/{id}", method = RequestMethod.GET)
@@ -52,5 +62,10 @@ public final class AdminController {
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
     AdminDTO update(@RequestBody @Valid AdminDTO adminEntry) {
         return service.update(adminEntry);
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    boolean login(@RequestBody @Valid AdminDTO adminEntry) {
+        return service.login(adminEntry);
     }
 }

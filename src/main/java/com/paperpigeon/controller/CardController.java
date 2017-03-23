@@ -25,7 +25,7 @@ public final class CardController {
         this.service = service;
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     CardDTO create(@RequestBody @Valid CardDTO cardEntry){
         return service.create(cardEntry);

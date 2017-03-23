@@ -2,6 +2,7 @@ package com.paperpigeon.service;
 
 
 import com.paperpigeon.dto.UserDTO;
+import com.paperpigeon.exception.ObjectAlreadyInDB;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.List;
 
 public interface UserService {
 
-    UserDTO create(UserDTO card);
+    UserDTO create(UserDTO card) throws ObjectAlreadyInDB;
 
     UserDTO delete(String id);
 
@@ -23,4 +24,6 @@ public interface UserService {
     UserDTO findById(String id);
 
     UserDTO update(UserDTO card);
+
+    boolean login(UserDTO userToLogin);
 }

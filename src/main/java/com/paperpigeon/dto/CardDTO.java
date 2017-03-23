@@ -28,6 +28,8 @@ public final class CardDTO {
     @Size(max = Card.MAX_LENGTH_TITLE)
     private String title;
 
+    private double price;
+
     public CardDTO findCardById(String id){
         if(this.id.equals(id)){
             return this;
@@ -46,6 +48,14 @@ public final class CardDTO {
 
     public String getMessage() {
         return message;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public void setMessage(String description) {

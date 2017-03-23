@@ -1,6 +1,9 @@
 package com.paperpigeon.mongo_service;
 
 import com.paperpigeon.dto.AdminDTO;
+import com.paperpigeon.dto.UserDTO;
+import com.paperpigeon.exception.ObjectAlreadyInDB;
+import com.paperpigeon.model.User;
 import com.paperpigeon.repository.AdminRepository;
 import com.paperpigeon.service.AdminService;
 import com.paperpigeon.model.Admin;
@@ -29,7 +32,12 @@ public final class MongoAdminService implements AdminService {
     }
 
     @Override
-    public AdminDTO create(AdminDTO admin) {
+    public AdminDTO create(AdminDTO admin) throws ObjectAlreadyInDB {
+        for(Admin adminEntry : repository.findAll()){
+            if(adminEntry.getEmail().equals(admin.getEmail())) {
+                throw new ObjectAlreadyInDB("Admin");
+            }
+        }
         Admin persisted = Admin.getBuilder()
                 .email(admin.getEmail())
                 .password(admin.getPassword())
@@ -66,9 +74,22 @@ public final class MongoAdminService implements AdminService {
     @Override
     public AdminDTO update(AdminDTO admin) {
         Admin updated = findAdminById(admin.getId());
-        updated.update(admin.getEmail(), admin.getPassword());
+        String password = admin.getPassword() == null ? updated.getPassword() : admin.getPassword(),
+                email = admin.getEmail() == null ? updated.getEmail() : admin.getEmail();
+        updated.update(password, email);
         updated = repository.save(updated);
         return convertToDTO(updated);
+    }
+
+    public boolean login(AdminDTO adminToLogin) {
+        List<Admin> adminEntries = repository.findAll();
+        for(Admin admin : adminEntries){
+            if(adminToLogin.getEmail().equals(admin.getEmail())
+                    && adminToLogin.getPassword().equals(admin.getPassword())){
+                return true;
+            }
+        }
+        return false;
     }
 
     private Admin findAdminById(String id) {
