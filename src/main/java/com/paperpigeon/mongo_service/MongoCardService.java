@@ -34,6 +34,7 @@ public final class MongoCardService implements CardService {
                 .title(card.getTitle())
                 .message(card.getMessage())
                 .imagePath(card.getImagePath())
+                .price(card.getPrice())
                 .build();
         persisted = repository.save(persisted);
         return convertToDTO(persisted);
@@ -67,7 +68,11 @@ public final class MongoCardService implements CardService {
     @Override
     public CardDTO update(CardDTO card) {
         Card updated = findCardById(card.getId());
-       // updated.update(card.getTitle(), card.getDescription());
+        String title = card.getTitle() == null ? updated.getTitle() : card.getTitle(),
+                imagePath = card.getImagePath() == null ? updated.getImagePath() : card.getImagePath(),
+                message = card.getMessage() == null ? updated.getMessage() : card.getMessage();
+        double price = card.getPrice() == 0 ? updated.getPrice() : card.getPrice();
+        updated.update(title, message, imagePath, price);
         updated = repository.save(updated);
         return convertToDTO(updated);
     }
@@ -77,13 +82,6 @@ public final class MongoCardService implements CardService {
         return result.orElseThrow(() -> new NullPointerException(id));
     }
 
-    public CardDTO magic(String id){
-        Card card = findCardById(id);
-        card.magic();
-        card = repository.save(card);
-        return  convertToDTO(card);
-    }
-
     private CardDTO convertToDTO(Card model) {
         CardDTO dto = new CardDTO();
 
@@ -91,6 +89,7 @@ public final class MongoCardService implements CardService {
         dto.setTitle(model.getTitle());
         dto.setMessage(model.getMessage());
         dto.setImagePath(model.getImagePath());
+        dto.setPrice(model.getPrice());
 
         return dto;
     }

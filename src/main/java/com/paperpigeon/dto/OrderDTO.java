@@ -1,27 +1,47 @@
 package com.paperpigeon.dto;
 
+
 import com.paperpigeon.model.Order;
+import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 
 /**
- * Created by Huzdu on 3/16/2017.
+ * This is the object we use as a information-holder for our REST calls. This means that we pass this object
+ * as body in our controller, if we want a body(for the id, for example).
+ *
+ * A DTO (data transfer object) is meant to carry data between different processes,
+ * in our case between the DB and the controller.
+ * Every POJO should have this equivalent!
  */
-public class OrderDTO {
+public final class OrderDTO {
+
     private String id;
+    
+    private String cardId;
 
-    @Size(max = Order.LENGHT_CARD)
-    private String cardNumber = "";
+    private String ownerId;
 
-    @Size(max = Order.MAX_LENGHT_ADRESS)
-    private String adress = "";
+    //@NotEmpty
+    @Size(max = Order.MAX_LENGTH_TITLE)
+    private String address;
 
-    public String getCost() {
-        return cost;
+    private DateTime orderDate;
+
+    public OrderDTO findOrderById(String id){
+        if(this.id.equals(id)){
+            return this;
+        } else {
+            return null;
+        }
     }
 
-    public void setCost(String cost) {
-        this.cost = cost;
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
     }
 
     public String getId() {
@@ -32,22 +52,27 @@ public class OrderDTO {
         this.id = id;
     }
 
-    public String getCardNumber() {
-        return cardNumber;
+    public String getCardId() {
+        return cardId;
     }
 
-    public void setCardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
+    public void setCardId(String cardId) {
+        this.cardId = cardId;
     }
 
-    public String getAdress() {
-        return adress;
+    public DateTime getOrderDate() {
+        return orderDate;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setOrderDate(DateTime orderDate) {
+        this.orderDate = orderDate;
     }
 
-    private String cost;
+    public String getAddress() {
+        return address;
+    }
 
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }

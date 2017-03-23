@@ -1,96 +1,138 @@
 package com.paperpigeon.model;
 
+import org.joda.time.DateTime;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 /**
- * Created by Huzdu on 3/16/2017.
+ * This is a POJO(Plain Old Java Object), so its purpose is to model a entity
+ * that will be then handled by the DB, calls, and so on.
  */
 @Document(collection = "Order")
-public class Order {
-    public final static int LENGHT_CARD = 16;
-    public final static int MAX_LENGHT_ADRESS = 100;
+public final class Order {
+
+    public static final int MAX_LENGTH_ADDRESS = 500;
+    public static final int MAX_LENGTH_TITLE = 100;
 
     @Id
     private String id;
 
-    @Field(value = "cardNumber")
-    private String cardNumber;
+    @Field(value = "cardId")
+    private String cardId;
 
-    @Field(value = "adress")
-    private String adress;
+    @Field(value = "address")
+    private String address;
 
-    @Field(value= "cost")
-    private int cost;
+    @Field(value = "date")
+    private DateTime orderDate;
 
-    public String getCardNumber() {
-        return cardNumber;
+    @Field(value = "ownerId")
+    private String ownerId;
+
+    public Order() {}
+
+    private Order(Builder builder) {
+        this.cardId = builder.cardId;
+        this.address = builder.address;
+        this.orderDate = builder.dateOrder;
+        this.ownerId = builder.ownerId;
     }
 
-    public void setCardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
+    public static Builder getBuilder() {
+        return new Builder();
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public String getCardId() {
+        return cardId;
     }
 
-    public int getCost() {
-        return cost;
+    public String getOwnerId() {
+        return ownerId;
     }
 
-    public void setCost(int cost) {
-        this.cost = cost;
+    public DateTime getOrderDate() {
+        return orderDate;
     }
 
-    private Order(Builder builder){
-        this.cardNumber=builder.cardNumber;
-        this.adress=builder.adress;
-        this.cost=builder.cost;
+    public String getId() {
+        return id;
     }
 
+    public void update(String address, String cardId, String ownerId) {
+        checkAddressAndCardId(address, cardId);
+
+        this.address = address;
+        this.cardId = cardId;
+        this.ownerId = ownerId;
+    }
+
+    /**
+     * We don't have to use the builder pattern here because the constructed
+     * class has only two String fields. However, I use the builder pattern
+     * in this example because it makes the code a bit easier to read.
+     */
     public static class Builder {
-        private String cardNumber;
-        private String adress;
-        private int cost;
 
-        public Builder(){}
+        private String cardId;
 
-        public Order.Builder cardNumber(String cardNumber){
-            this.cardNumber = cardNumber;
-            return this;
-        }
-        public Order.Builder adress(String adress){
-            this.adress = adress;
-            return this;
-        }
-        public Order.Builder cost(String adress){
-            this.cost = cost;
+        private String address;
+
+        private DateTime dateOrder;
+
+        private String ownerId;
+
+        private Builder() {}
+
+        public Builder cardId(String cardId) {
+            this.cardId = cardId;
             return this;
         }
 
-        public Order build(){
+        public Builder ownerId(String ownerId) {
+            this.ownerId = ownerId;
+            return this;
+        }
+
+        public Builder address(String address) {
+            this.address = address;
+            return this;
+        }
+
+        public Builder dateOrder(){
+            this.dateOrder = DateTime.now();
+            return this;
+        }
+
+        public Order build() {
             Order build = new Order(this);
-            if(build.checkOrder(build.getCardNumber(),build.getAdress(),build.getCost())){
+            if(build.checkAddressAndCardId(build.getAddress(), build.getCardId())){
                 return build;
             }
             throw new IllegalArgumentException();
         }
-
     }
 
-    private boolean checkOrder(String cardNumber,String adress,int cost){
-        if((cardNumber.equals(null)&&(adress.equals(null) && (cost==0)))){
+    private boolean checkAddressAndCardId(String address, String cardId) {
+        if(address == null) {
+            System.err.println("Address cannot be null");
             return false;
-        } else if ((cardNumber.equals(LENGHT_CARD)&&(adress.length()<MAX_LENGHT_ADRESS) && (cost > 0))){
-            return true;
         }
-        return false;
-    }
 
+        if(address.isEmpty()) {
+            System.err.println("Address cannot be empty");
+            return false;
+        }
+
+        if(address.length() > MAX_LENGTH_TITLE){
+            System.err.println("Address cannot be longer than " + MAX_LENGTH_TITLE + " characters");
+            return false;
+        }
+
+        return true;
+    }
 }

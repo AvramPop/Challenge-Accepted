@@ -5,28 +5,27 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 /**
- * Created by Laura on 3/15/2017.
+ * This is a POJO(Plain Old Java Object), so its purpose is to model a entity
+ * that will be then handled by the DB, calls, and so on.
  */
 @Document(collection = "Admin")
-public class Admin {
+public final class Admin {
+
+    public static final int MAX_LENGTH_EMAIL = 500;
+    public static final int MAX_LENGTH_PASSWORD = 100;
+
     @Id
     private String id;
-    @Field(value = "firstName")
-    private String firstName;
-    @Field(value = "lastName")
-    private String lastName;
+
     @Field(value = "email")
     private String email;
+
     @Field(value = "password")
     private String password;
 
-
-    public static final int MAX_NUMBER_OF_CHARACTERS = 50;
-    public static final int MIN_NUMBER_OF_CHARACTERS = 2;
+    public Admin() {}
 
     private Admin(Builder builder) {
-        this.firstName = builder.firstName;
-        this.lastName = builder.lastName;
         this.email = builder.email;
         this.password = builder.password;
     }
@@ -35,154 +34,85 @@ public class Admin {
         return new Builder();
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public String getPassword() {
+        return password;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public String getId() {
+        return id;
+    }
+
+    public void magic() {
+        this.password = this.password + "ish";
+        System.out.println("magic happens");
+    }
+
+    public void update(String password, String email) {
+        checkPasswordAndEmail(password, email);
+
+        this.password = password;
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-
-    public void update(String firstName, String lastName, String email, String password) {
-        checkFirstNameLastNameAndEmail(firstName,lastName,email,password);
-        this.firstName =firstName;
-        this.lastName = lastName;
-        this.email =email;
-        this.password = password;
-    }
-
+    /**
+     * We don't have to use the builder pattern here because the constructed
+     * class has only two String fields. However, I use the builder pattern
+     * in this example because it makes the code a bit easier to read.
+     */
     public static class Builder {
-
-        private String firstName;
-
-        private String lastName;
 
         private String email;
 
         private String password;
 
-        public Builder() {
-        }
+        private Builder() {}
 
-        public Admin.Builder firstName(String firstName) {
-            this.firstName = firstName;
-            return this;
-        }
-
-        public Admin.Builder lastName(String lastName) {
-            this.lastName = lastName;
-            return this;
-        }
-
-        public Admin.Builder email(String email) {
+        public Builder email(String email) {
             this.email = email;
             return this;
         }
 
-        public Admin.Builder password(String password) {
+        public Builder password(String password) {
             this.password = password;
             return this;
         }
 
         public Admin build() {
             Admin build = new Admin(this);
-            if (build.checkFirstNameLastNameAndEmail(build.getFirstName(), build.getLastName(), build.getEmail(),build.getPassword())) {
+            if(build.checkPasswordAndEmail(build.getPassword(), build.getEmail())){
                 return build;
             }
             throw new IllegalArgumentException();
         }
     }
 
-    private boolean checkFirstNameLastNameAndEmail(String firstName, String lastName, String email,String password) {
-        if (firstName == null) {
-            System.err.println("First name cannot be null");
-            return false;
-        }
-
-        if (lastName == null) {
-            System.err.println("Last name cannot be null");
-            return false;
-        }
-
-        if (email == null) {
-            System.err.println("Email cannot be null");
-            return false;
-        }
-
-        if (password == null) {
+    private boolean checkPasswordAndEmail(String password, String email) {
+        if(password == null) {
             System.err.println("Password cannot be null");
             return false;
         }
 
-        if (firstName.length() > MAX_NUMBER_OF_CHARACTERS || firstName.length() < MIN_NUMBER_OF_CHARACTERS) {
-            System.err.println("First name must have at least 2 characters and no more that 50");
+        if(password.isEmpty()) {
+            System.err.println("Password cannot be empty");
             return false;
         }
 
-        if (lastName.length() > MAX_NUMBER_OF_CHARACTERS || lastName.length() < MIN_NUMBER_OF_CHARACTERS) {
-            System.err.println("Last name must have at least 2 characters and no more that 50");
+        if(password.length() > MAX_LENGTH_PASSWORD){
+            System.err.println("Password cannot be longer than " + MAX_LENGTH_PASSWORD + " characters");
             return false;
         }
 
-        if (containsDigit(firstName)) {
-            System.err.println("First name must not contain digits");
-            return false;
+        if (email != null) {
+            if(email.length() > MAX_LENGTH_EMAIL){
+                System.err.println("Email cannot be longer than " + MAX_LENGTH_EMAIL + " characters");
+                return false;
+            }
         }
-
-        if (containsDigit(lastName)) {
-            System.err.println("Last name must not contain digits");
-            return false;
-        }
-
 
         return true;
     }
-
-    private boolean containsDigit(String firstName) {
-        boolean containsDigit = false;
-
-        if (firstName != null && !firstName.isEmpty()) {
-            for (char c : firstName.toCharArray()) {
-                if (containsDigit = Character.isDigit(c)) {
-                    break;
-                }
-            }
-        }
-        return containsDigit;
-    }
-
-
 }

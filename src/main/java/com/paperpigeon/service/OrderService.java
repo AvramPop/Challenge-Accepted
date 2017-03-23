@@ -1,17 +1,29 @@
 package com.paperpigeon.service;
 
 import com.paperpigeon.dto.OrderDTO;
-import com.paperpigeon.dto.UserDTO;
-import org.springframework.stereotype.Service;
+import com.paperpigeon.exception.CardNotFoundException;
+import com.paperpigeon.exception.UserNotFoundException;
 
 import java.util.List;
 
 /**
- * Created by Huzdu on 3/16/2017.
+ * Created by dani on 3/22/17.
+ package com.paperpigeon.service;
+
+
+ import com.paperpigeon.dto.OrderDTO;
+
+ import java.util.List;
+
+ /**
+ * Here are the methods of Order that can be called via Rest.
+ * If you want to add a new method, add it here, because the
+ * DB service implements this interface.
  */
-@Service
+
 public interface OrderService {
-    OrderDTO create(OrderDTO dto);
+
+    OrderDTO create(OrderDTO order) throws CardNotFoundException, UserNotFoundException;
 
     OrderDTO delete(String id);
 
@@ -19,6 +31,5 @@ public interface OrderService {
 
     OrderDTO findById(String id);
 
-    OrderDTO update(UserDTO todo);
-
+    OrderDTO update(OrderDTO order);
 }

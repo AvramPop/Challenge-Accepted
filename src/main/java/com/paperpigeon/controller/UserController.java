@@ -1,41 +1,54 @@
 package com.paperpigeon.controller;
 
 import com.paperpigeon.dto.UserDTO;
-import com.paperpigeon.exception.TodoNotFoundException;
+import com.paperpigeon.exception.ObjectAlreadyInDB;
+import com.paperpigeon.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.List;
 
 /**
- * Created by Huzdu on 3/14/2017.
+ * This is the place where the whole magic happens. Here we create new REST calls
+ * (GET, POST, etc), that can be than handled from outside (frontend, postman).
  */
+
 @RestController
 @RequestMapping("/api/user")
-public class UserController {
-    private final UserController service;
+public final class UserController {
+
+    private final UserService service;
 
     @Autowired
-    public UserController(UserController service) {
+    UserController(UserService service) {
         this.service = service;
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    UserDTO create(@RequestBody @Valid UserDTO userEntry){
-        return service.create(userEntry);
+    UserDTO create(@RequestBody @Valid UserDTO userEntry) {
+        try {
+            return service.create(userEntry);
+        } catch (ObjectAlreadyInDB e) {
+            System.out.println((e.getMessage()));
+        }
+        return null;
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
     UserDTO delete(@RequestBody @Valid UserDTO request) {
-        return service.delete(request.findUserById(request.getId()));
+        return service.delete(request.getId());
     }
 
     @RequestMapping(value = "/findall", method = RequestMethod.GET)
     List<UserDTO> findAll() {
         return service.findAll();
+        /*ModelAndView result = new ModelAndView("user/list");
+        result.addObject("users", service.findAll());
+        return result;*/
     }
 
     @RequestMapping(value = "/findone/{id}", method = RequestMethod.GET)
@@ -48,9 +61,8 @@ public class UserController {
         return service.update(userEntry);
     }
 
-    @ExceptionHandler
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public void handleTodoNotFound(TodoNotFoundException ex) {
-        ex.printStackTrace();
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    boolean login(@RequestBody @Valid UserDTO userEntry) {
+        return service.login(userEntry);
     }
 }

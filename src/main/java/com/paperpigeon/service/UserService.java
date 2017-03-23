@@ -1,17 +1,21 @@
 package com.paperpigeon.service;
 
+
 import com.paperpigeon.dto.UserDTO;
+import com.paperpigeon.exception.ObjectAlreadyInDB;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
- * Created by Huzdu on 3/14/2017.
+ * Here are the methods of User that can be called via Rest.
+ * If you want to add a new method, add it here, because the
+ * DB service implements this interface.
  */
-@Service
+
 public interface UserService {
 
-    UserDTO create(UserDTO dto);
+    UserDTO create(UserDTO card) throws ObjectAlreadyInDB;
 
     UserDTO delete(String id);
 
@@ -19,8 +23,7 @@ public interface UserService {
 
     UserDTO findById(String id);
 
-    UserDTO update(UserDTO todo);
+    UserDTO update(UserDTO card);
 
-    UserDTO magic(String id);
-
+    boolean login(UserDTO userToLogin);
 }

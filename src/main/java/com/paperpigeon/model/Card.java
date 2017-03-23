@@ -27,12 +27,16 @@ public final class Card {
     @Field(value = "imagePath")
     private String imagePath;
 
+    @Field(value = "price")
+    private double price;
+
     public Card() {}
 
     private Card(Builder builder) {
         this.message = builder.message;
         this.title = builder.title;
         this.imagePath = builder.imagePath;
+        this.price = builder.price;
     }
 
     public static Builder getBuilder() {
@@ -41,6 +45,10 @@ public final class Card {
 
     public String getTitle() {
         return title;
+    }
+
+    public double getPrice() {
+        return price;
     }
 
     public String getMessage() {
@@ -55,17 +63,13 @@ public final class Card {
         return imagePath;
     }
 
-    public void magic() {
-        this.title = this.title + "ish";
-        System.out.println("magic happens");
-    }
-
-    public void update(String title, String message, String imagePath) {
+    public void update(String title, String message, String imagePath, double price) {
         checkInfo(title, message, imagePath);
 
         this.title = title;
         this.imagePath = imagePath;
         this.message = message;
+        this.price = price;
     }
 
     public static class Builder {
@@ -74,12 +78,19 @@ public final class Card {
 
         private String title;
 
+        private double price;
+
         private String imagePath;
 
         private Builder() {}
 
         public Builder message(String message) {
             this.message = message;
+            return this;
+        }
+
+        public Builder price(double price) {
+            this.price = price;
             return this;
         }
 

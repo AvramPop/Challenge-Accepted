@@ -1,10 +1,14 @@
 package com.paperpigeon.mongo_service;
 
 import com.paperpigeon.dto.AdminDTO;
-import com.paperpigeon.model.Admin;
+import com.paperpigeon.dto.UserDTO;
+import com.paperpigeon.exception.ObjectAlreadyInDB;
+import com.paperpigeon.model.User;
 import com.paperpigeon.repository.AdminRepository;
 import com.paperpigeon.service.AdminService;
+import com.paperpigeon.model.Admin;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,9 +16,13 @@ import java.util.Optional;
 import static java.util.stream.Collectors.toList;
 
 /**
- * Created by Laura on 3/18/2017.
+ * This is the place where we implement the methods from the controller(here, AdminController)
+ * the way they behave and connect to the DB
+ * <p>!NEVER forget to save your changes in the DB (obj = repository.save(obj))!!</p>
  */
-public class MongoAdminService implements AdminService {
+
+@Service
+public final class MongoAdminService implements AdminService {
 
     private final AdminRepository repository;
 
@@ -23,14 +31,16 @@ public class MongoAdminService implements AdminService {
         this.repository = repository;
     }
 
-
     @Override
-    public AdminDTO create(AdminDTO adminDTO) {
+    public AdminDTO create(AdminDTO admin) throws ObjectAlreadyInDB {
+        for(Admin adminEntry : repository.findAll()){
+            if(adminEntry.getEmail().equals(admin.getEmail())) {
+                throw new ObjectAlreadyInDB("Admin");
+            }
+        }
         Admin persisted = Admin.getBuilder()
-                .firstName(adminDTO.getFirstName())
-                .lastName(adminDTO.getLastName())
-                .email(adminDTO.getEmail())
-                .password(adminDTO.getPassword())
+                .email(admin.getEmail())
+                .password(admin.getPassword())
                 .build();
         persisted = repository.save(persisted);
         return convertToDTO(persisted);
@@ -43,19 +53,16 @@ public class MongoAdminService implements AdminService {
         return convertToDTO(deleted);
     }
 
-
-    @Override
-    public AdminDTO update(AdminDTO adminDTO) {
-        Admin updated = repository.findAdminById(adminDTO.getId());
-        updated.update(adminDTO.getFirstName(), adminDTO.getLastName(), adminDTO.getEmail(), adminDTO.getPassword());
-        updated = repository.save(updated);
-        return convertToDTO(updated);
-    }
-
     @Override
     public List<AdminDTO> findAll() {
-        List<Admin> adminList =repository.findAll();
-        return convertToDTOs(adminList);
+        List<Admin> adminEntries = repository.findAll();
+        return convertToDTOs(adminEntries);
+    }
+
+    private List<AdminDTO> convertToDTOs(List<Admin> models) {
+        return models.stream()
+                .map(this::convertToDTO)
+                .collect(toList());
     }
 
     @Override
@@ -64,24 +71,40 @@ public class MongoAdminService implements AdminService {
         return convertToDTO(found);
     }
 
+    @Override
+    public AdminDTO update(AdminDTO admin) {
+        Admin updated = findAdminById(admin.getId());
+        String password = admin.getPassword() == null ? updated.getPassword() : admin.getPassword(),
+                email = admin.getEmail() == null ? updated.getEmail() : admin.getEmail();
+        updated.update(password, email);
+        updated = repository.save(updated);
+        return convertToDTO(updated);
+    }
+
+    public boolean login(AdminDTO adminToLogin) {
+        List<Admin> adminEntries = repository.findAll();
+        for(Admin admin : adminEntries){
+            if(adminToLogin.getEmail().equals(admin.getEmail())
+                    && adminToLogin.getPassword().equals(admin.getPassword())){
+                return true;
+            }
+        }
+        return false;
+    }
+
     private Admin findAdminById(String id) {
         Optional<Admin> result = repository.findOne(id);
         return result.orElseThrow(() -> new NullPointerException(id));
+
     }
 
+    private AdminDTO convertToDTO(Admin model) {
+        AdminDTO dto = new AdminDTO();
 
-    private AdminDTO convertToDTO(Admin admin) {
-        AdminDTO adminDTO = new AdminDTO();
-        adminDTO.setFirstName(admin.getFirstName());
-        adminDTO.setLastName(admin.getLastName());
-        adminDTO.setEmail(admin.getEmail());
-        adminDTO.setPassword(admin.getPassword());
-        return adminDTO;
+        dto.setId(model.getId());
+        dto.setEmail(model.getEmail());
+        dto.setPassword(model.getPassword());
+
+        return dto;
     }
-
-    private List<AdminDTO> convertToDTOs(List<Admin> adminEntries) {
-        return adminEntries.stream() .map(this::convertToDTO)
-                .collect(toList());
-    }
-
 }
