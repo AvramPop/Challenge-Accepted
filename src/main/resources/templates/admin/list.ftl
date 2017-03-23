@@ -21,7 +21,7 @@
   <body>
   <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 
-        <p><b>User</b>
+        <p><b>Admin</b>
 
         <table class = "table">
         <tr>
@@ -31,13 +31,13 @@
         	<th>Last Name</th>
         </tr>
 
-        [#list users as user]
+        [#list admins as admin]
 
         	<tr>
-        		<td>${user.email!''}</td>
-        		<td>${user.password!''}</td>
-        		<td>${user.firstName!''}</td>
-        		<td>${user.lastName!''}</td>
+        		<td>${admin.email!''}</td>
+        		<td>${admin.password!''}</td>
+        		<td>${admin.firstName!''}</td>
+        		<td>${admin.lastName!''}</td>
         	</tr>
         [/#list]
 

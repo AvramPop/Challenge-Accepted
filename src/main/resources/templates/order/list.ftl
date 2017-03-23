@@ -21,23 +21,23 @@
   <body>
   <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 
-        <p><b>User</b>
+        <p><b>Order</b>
 
         <table class = "table">
         <tr>
-        	<th>Email</th>
-        	<th>Password</th>
-        	<th>First Name</th>
-        	<th>Last Name</th>
+        	<th>Card ID</th>
+        	<th>Address</th>
+        	<th>Order ID</th>
+        	<th>Date</th>
         </tr>
 
-        [#list users as user]
+        [#list orders as order]
 
         	<tr>
-        		<td>${user.email!''}</td>
-        		<td>${user.password!''}</td>
-        		<td>${user.firstName!''}</td>
-        		<td>${user.lastName!''}</td>
+        		<td>${order.cardId!''}</td>
+        		<td>${order.address!''}</td>
+        		<td>${order.ownerId!''}</td>
+        		<td>${order.orderDate!''}</td>
         	</tr>
         [/#list]
 

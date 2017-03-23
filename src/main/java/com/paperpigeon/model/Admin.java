@@ -23,11 +23,19 @@ public final class Admin {
     @Field(value = "password")
     private String password;
 
+    @Field(value = "firstName")
+    private String firstName;
+
+    @Field(value = "lastName")
+    private String lastName;
+
     public Admin() {}
 
     private Admin(Builder builder) {
         this.email = builder.email;
         this.password = builder.password;
+        this.firstName = builder.firstName;
+        this.lastName = builder.lastName;
     }
 
     public static Builder getBuilder() {
@@ -46,16 +54,21 @@ public final class Admin {
         return id;
     }
 
-    public void magic() {
-        this.password = this.password + "ish";
-        System.out.println("magic happens");
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void update(String password, String email) {
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void update(String password, String email, String firstName, String lastName) {
         checkPasswordAndEmail(password, email);
 
         this.password = password;
         this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     /**
@@ -69,6 +82,10 @@ public final class Admin {
 
         private String password;
 
+        private String firstName;
+
+        private String lastName;
+
         private Builder() {}
 
         public Builder email(String email) {
@@ -78,6 +95,16 @@ public final class Admin {
 
         public Builder password(String password) {
             this.password = password;
+            return this;
+        }
+
+        public Builder firstName(String firstName) {
+            this.firstName = firstName;
+            return this;
+        }
+
+        public Builder lastName(String lastName) {
+            this.lastName = lastName;
             return this;
         }
 

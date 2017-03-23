@@ -24,6 +24,10 @@ public final class UserDTO {
     @Size(max = User.MAX_LENGTH_PASSWORD)
     private String password;
 
+    private String firstName;
+
+    private String lastName;
+
     public UserDTO findUserById(String id){
         if(this.id.equals(id)){
             return this;
@@ -34,6 +38,22 @@ public final class UserDTO {
 
     public String getId() {
         return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public void setId(String id) {

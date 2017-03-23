@@ -47,11 +47,10 @@ public final class AdminController {
     }
 
     @RequestMapping(value = "/findall", method = RequestMethod.GET)
-    List<AdminDTO> findAll() {
-        return service.findAll();
-        /*ModelAndView result = new ModelAndView("admin/list");
+    ModelAndView findAll() {
+        ModelAndView result = new ModelAndView("admin/list");
         result.addObject("admins", service.findAll());
-        return result;*/
+        return result;
     }
 
     @RequestMapping(value = "/findone/{id}", method = RequestMethod.GET)

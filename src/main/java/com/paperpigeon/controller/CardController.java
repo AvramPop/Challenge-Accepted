@@ -6,6 +6,7 @@ import com.paperpigeon.service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -37,8 +38,10 @@ public final class CardController {
     }
 
     @RequestMapping(value = "/findall", method = RequestMethod.GET)
-    List<CardDTO> findAll() {
-        return service.findAll();
+    ModelAndView findAll() {
+        ModelAndView result = new ModelAndView("card/list");
+        result.addObject("cards", service.findAll());
+        return result;
     }
 
     @RequestMapping(value = "/findone/{id}", method = RequestMethod.GET)

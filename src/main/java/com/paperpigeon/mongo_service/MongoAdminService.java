@@ -41,6 +41,8 @@ public final class MongoAdminService implements AdminService {
         Admin persisted = Admin.getBuilder()
                 .email(admin.getEmail())
                 .password(admin.getPassword())
+                .firstName(admin.getFirstName())
+                .lastName(admin.getLastName())
                 .build();
         persisted = repository.save(persisted);
         return convertToDTO(persisted);
@@ -75,8 +77,10 @@ public final class MongoAdminService implements AdminService {
     public AdminDTO update(AdminDTO admin) {
         Admin updated = findAdminById(admin.getId());
         String password = admin.getPassword() == null ? updated.getPassword() : admin.getPassword(),
-                email = admin.getEmail() == null ? updated.getEmail() : admin.getEmail();
-        updated.update(password, email);
+                email = admin.getEmail() == null ? updated.getEmail() : admin.getEmail(),
+                firstName = admin.getFirstName() == null ? updated.getFirstName() : admin.getFirstName(),
+                lastName = admin.getLastName() == null ? updated.getLastName() : admin.getLastName();
+        updated.update(password, email, firstName, lastName);
         updated = repository.save(updated);
         return convertToDTO(updated);
     }
@@ -104,6 +108,8 @@ public final class MongoAdminService implements AdminService {
         dto.setId(model.getId());
         dto.setEmail(model.getEmail());
         dto.setPassword(model.getPassword());
+        dto.setLastName(model.getLastName());
+        dto.setFirstName(model.getFirstName());
 
         return dto;
     }

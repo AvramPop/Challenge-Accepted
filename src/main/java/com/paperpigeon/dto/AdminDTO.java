@@ -17,12 +17,16 @@ public final class AdminDTO {
 
     private String id;
 
-        @Size(max = Admin.MAX_LENGTH_EMAIL)
+    @Size(max = Admin.MAX_LENGTH_EMAIL)
     private String email;
 
     //@NotEmpty
     @Size(max = Admin.MAX_LENGTH_PASSWORD)
     private String password;
+
+    private String firstName;
+
+    private String lastName;
 
     public AdminDTO findAdminById(String id){
         if(this.id.equals(id)){
@@ -38,6 +42,22 @@ public final class AdminDTO {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {

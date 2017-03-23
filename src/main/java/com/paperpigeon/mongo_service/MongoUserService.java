@@ -40,6 +40,8 @@ public final class MongoUserService implements UserService {
         User persisted = User.getBuilder()
                 .password(user.getPassword())
                 .email(user.getEmail())
+                .firstName(user.getFirstName())
+                .lastName(user.getLastName())
                 .build();
         persisted = repository.save(persisted);
         return convertToDTO(persisted);
@@ -85,8 +87,10 @@ public final class MongoUserService implements UserService {
     public UserDTO update(UserDTO user) {
         User updated = findUserById(user.getId());
         String password = user.getPassword() == null ? updated.getPassword() : user.getPassword(),
-                email = user.getEmail() == null ? updated.getEmail() : user.getEmail();
-        updated.update(password, email);
+                email = user.getEmail() == null ? updated.getEmail() : user.getEmail(),
+                firstName = user.getFirstName() == null ? updated.getFirstName() : user.getFirstName(),
+                lastName = user.getLastName() == null ? updated.getLastName() : user.getLastName();
+        updated.update(password, email, firstName, lastName);
         updated = repository.save(updated);
         return convertToDTO(updated);
     }
@@ -104,6 +108,8 @@ public final class MongoUserService implements UserService {
         dto.setPassword(model.getPassword());
         dto.setEmail(model.getEmail());
         dto.setId(model.getId());
+        dto.setFirstName(model.getFirstName());
+        dto.setLastName(model.getLastName());
         return dto;
     }
 }

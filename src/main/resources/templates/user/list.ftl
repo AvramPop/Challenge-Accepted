@@ -21,19 +21,23 @@
   <body>
   <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 
-        <p><b>Todo</b>
+        <p><b>User</b>
 
         <table class = "table">
         <tr>
-        	<th>Title</th>
-        	<th>Desc</th>
+        	<th>Email</th>
+        	<th>Password</th>
+        	<th>First Name</th>
+        	<th>Last Name</th>
         </tr>
 
-        [#list users as todo]
+        [#list users as user]
 
         	<tr>
-        		<td>${todo.title!''}</td>
-        		<td>${todo.description!''}</td>
+        		<td>${user.email!''}</td>
+        		<td>${user.password!''}</td>
+        		<td>${user.firstName!''}</td>
+        		<td>${user.lastName!''}</td>
         	</tr>
         [/#list]
 
