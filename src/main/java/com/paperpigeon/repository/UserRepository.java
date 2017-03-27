@@ -1,7 +1,5 @@
 package com.paperpigeon.repository;
 
-
-import com.paperpigeon.model.Todo;
 import com.paperpigeon.model.User;
 import org.springframework.data.repository.Repository;
 
