@@ -2,7 +2,6 @@ package com.paperpigeon.repository;
 
 
 import com.paperpigeon.model.Order;
-import com.paperpigeon.model.Order;
 import org.springframework.data.repository.Repository;
 
 import java.util.List;

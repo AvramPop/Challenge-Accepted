@@ -71,11 +71,6 @@ public final class Order {
         this.ownerId = ownerId;
     }
 
-    /**
-     * We don't have to use the builder pattern here because the constructed
-     * class has only two String fields. However, I use the builder pattern
-     * in this example because it makes the code a bit easier to read.
-     */
     public static class Builder {
 
         private String cardId;

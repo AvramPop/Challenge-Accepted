@@ -44,15 +44,19 @@ public final class OrderController {
         return service.delete(request.getId());
     }
 
-    @RequestMapping(value = "/findall", method = RequestMethod.GET)
+    /*@RequestMapping(value = "/findall", method = RequestMethod.GET)
     ModelAndView findAll() {
-      //  return service.findAll();
         ModelAndView result = new ModelAndView("order/list");
         result.addObject("orders", service.findAll());
         return result;
+    }*/
+
+    @RequestMapping(value = "/findall", method = RequestMethod.GET)
+    List<OrderDTO> findAll() {
+          return service.findAll();
     }
 
-    @RequestMapping(value = "/findone/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/findbyid/{id}", method = RequestMethod.GET)
     OrderDTO findById(@PathVariable String id) {
         return service.findById(id);
     }

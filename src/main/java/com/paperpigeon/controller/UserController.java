@@ -6,7 +6,6 @@ import com.paperpigeon.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -43,15 +42,19 @@ public final class UserController {
         return service.delete(request.getId());
     }
 
-    @RequestMapping(value = "/findall", method = RequestMethod.GET)
+    /*@RequestMapping(value = "/findall", method = RequestMethod.GET)
     ModelAndView findAll() {
-      //  return service.findAll();
         ModelAndView result = new ModelAndView("user/list");
         result.addObject("users", service.findAll());
         return result;
+    }*/
+
+    @RequestMapping(value = "/findall", method = RequestMethod.GET)
+    List<UserDTO> findAll() {
+        return service.findAll();
     }
 
-    @RequestMapping(value = "/findone/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/findbyid/{id}", method = RequestMethod.GET)
     UserDTO findById(@PathVariable String id) {
         return service.findById(id);
     }
@@ -62,7 +65,9 @@ public final class UserController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    boolean login(@RequestBody @Valid UserDTO userEntry) {
-        return service.login(userEntry);
+    String login(@RequestBody @Valid UserDTO userEntry) {
+        if(service.checkCredentials(userEntry)){
+            return "User " + userEntry.getEmail() + " has been successfully logged in";
+        } else return "Bad credentials";
     }
 }

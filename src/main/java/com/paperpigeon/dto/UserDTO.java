@@ -2,6 +2,7 @@ package com.paperpigeon.dto;
 
 
 import com.paperpigeon.model.User;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.Size;
 
@@ -17,15 +18,18 @@ public final class UserDTO {
 
     private String id;
 
+    @NotEmpty
     @Size(max = User.MAX_LENGTH_EMAIL)
     private String email;
 
-    //@NotEmpty
+    @NotEmpty
     @Size(max = User.MAX_LENGTH_PASSWORD)
     private String password;
 
+    @Size(max = User.MAX_LENGTH_FIRSTNAME)
     private String firstName;
 
+    @Size(max = User.MAX_LENGTH_LASTNAME)
     private String lastName;
 
     public UserDTO findUserById(String id){

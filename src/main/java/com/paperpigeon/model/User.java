@@ -13,6 +13,8 @@ public final class User {
 
     public static final int MAX_LENGTH_EMAIL = 500;
     public static final int MAX_LENGTH_PASSWORD = 100;
+    public static final int MAX_LENGTH_FIRSTNAME = 100;
+    public static final int MAX_LENGTH_LASTNAME = 100;
 
     @Id
     private String id;
@@ -71,11 +73,6 @@ public final class User {
         this.lastName = lastName;
     }
 
-    /**
-     * We don't have to use the builder pattern here because the constructed
-     * class has only two String fields. However, I use the builder pattern
-     * in this example because it makes the code a bit easier to read.
-     */
     public static class Builder {
 
         private String email;

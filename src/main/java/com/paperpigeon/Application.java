@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -26,7 +25,7 @@ public class Application extends SpringBootServletInitializer implements Command
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("--------------##########################--------------------------");
+        log.info("The system has successfully started!");
     }
 
     @Override

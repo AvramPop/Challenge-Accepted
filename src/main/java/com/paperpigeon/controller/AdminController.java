@@ -1,15 +1,11 @@
 package com.paperpigeon.controller;
 
 import com.paperpigeon.dto.AdminDTO;
-import com.paperpigeon.dto.UserDTO;
-import com.paperpigeon.exception.CardNotFoundException;
 import com.paperpigeon.exception.ObjectAlreadyInDB;
-import com.paperpigeon.exception.UserNotFoundException;
 import com.paperpigeon.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -46,14 +42,19 @@ public final class AdminController {
         return service.delete(request.getId());
     }
 
-    @RequestMapping(value = "/findall", method = RequestMethod.GET)
+    /*@RequestMapping(value = "/findall", method = RequestMethod.GET)
     ModelAndView findAll() {
         ModelAndView result = new ModelAndView("admin/list");
         result.addObject("admins", service.findAll());
         return result;
+    }*/
+
+    @RequestMapping(value = "/findall", method = RequestMethod.GET)
+    List<AdminDTO> findAll() {
+        return service.findAll();
     }
 
-    @RequestMapping(value = "/findone/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/findbyid/{id}", method = RequestMethod.GET)
     AdminDTO findById(@PathVariable String id) {
         return service.findById(id);
     }
@@ -64,7 +65,9 @@ public final class AdminController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    boolean login(@RequestBody @Valid AdminDTO adminEntry) {
-        return service.login(adminEntry);
+    String login(@RequestBody @Valid AdminDTO adminEntry) {
+        if(service.checkCredentials(adminEntry)){
+            return "Admin " + adminEntry.getEmail() + " has been successfully logged in";
+        } else return "Bad credentials";
     }
 }

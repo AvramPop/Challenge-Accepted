@@ -21,6 +21,7 @@ public final class CardDTO {
     @Size(max = Card.MAX_LENGTH_MESSAGE)
     private String message = "";
 
+    @NotEmpty
     @Size(max = Card.MAX_LENGTH_IMAGEPATH)
     private String imagePath = "";
 
@@ -28,6 +29,7 @@ public final class CardDTO {
     @Size(max = Card.MAX_LENGTH_TITLE)
     private String title;
 
+    @NotEmpty
     private double price;
 
     public CardDTO findCardById(String id){

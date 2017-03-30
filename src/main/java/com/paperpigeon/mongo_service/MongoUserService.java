@@ -2,7 +2,6 @@ package com.paperpigeon.mongo_service;
 
 import com.paperpigeon.dto.UserDTO;
 import com.paperpigeon.exception.ObjectAlreadyInDB;
-import com.paperpigeon.model.Admin;
 import com.paperpigeon.repository.UserRepository;
 import com.paperpigeon.service.UserService;
 import com.paperpigeon.model.User;
@@ -60,7 +59,7 @@ public final class MongoUserService implements UserService {
         return convertToDTOs(userEntries);
     }
 
-    public boolean login(UserDTO userToLogin) {
+    public boolean checkCredentials(UserDTO userToLogin) {
         List<User> userEntries = repository.findAll();
         for(User user : userEntries){
             if(userToLogin.getEmail().equals(user.getEmail())

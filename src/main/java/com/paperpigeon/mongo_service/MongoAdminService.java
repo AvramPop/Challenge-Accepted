@@ -1,9 +1,7 @@
 package com.paperpigeon.mongo_service;
 
 import com.paperpigeon.dto.AdminDTO;
-import com.paperpigeon.dto.UserDTO;
 import com.paperpigeon.exception.ObjectAlreadyInDB;
-import com.paperpigeon.model.User;
 import com.paperpigeon.repository.AdminRepository;
 import com.paperpigeon.service.AdminService;
 import com.paperpigeon.model.Admin;
@@ -85,7 +83,7 @@ public final class MongoAdminService implements AdminService {
         return convertToDTO(updated);
     }
 
-    public boolean login(AdminDTO adminToLogin) {
+    public boolean checkCredentials(AdminDTO adminToLogin) {
         List<Admin> adminEntries = repository.findAll();
         for(Admin admin : adminEntries){
             if(adminToLogin.getEmail().equals(admin.getEmail())

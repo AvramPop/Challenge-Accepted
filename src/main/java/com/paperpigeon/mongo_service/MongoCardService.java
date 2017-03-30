@@ -7,6 +7,7 @@ import com.paperpigeon.model.Card;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,6 +52,18 @@ public final class MongoCardService implements CardService {
     public List<CardDTO> findAll() {
         List<Card> cardEntries = repository.findAll();
         return convertToDTOs(cardEntries);
+    }
+
+    @Override
+    public List<CardDTO> findByTitle(String title) {
+        List<Card> cardEntries = repository.findAll();
+        List<Card> cardsWithDesiredTitle = new ArrayList<>();
+        for(Card card : cardEntries){
+            if(card.getTitle().contains(title)){
+                cardsWithDesiredTitle.add(card);
+            }
+        }
+        return convertToDTOs(cardsWithDesiredTitle);
     }
 
     private List<CardDTO> convertToDTOs(List<Card> models) {

@@ -2,9 +2,7 @@ package com.paperpigeon.service;
 
 
 import com.paperpigeon.dto.AdminDTO;
-import com.paperpigeon.dto.UserDTO;
 import com.paperpigeon.exception.ObjectAlreadyInDB;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -26,5 +24,5 @@ public interface AdminService {
 
     AdminDTO update(AdminDTO card);
 
-    boolean login(AdminDTO adminToLogin);
+    boolean checkCredentials(AdminDTO adminToLogin);
 }

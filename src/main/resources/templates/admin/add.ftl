@@ -4,10 +4,14 @@
 <div style="color:red">${error}</div>
 [/#if]
 
-<form method="POST" action="api/todo/create">
-Title: <input name="title" value="${todo.title!''}"/>
+<form method="POST" action="api/admin/create">
+Email: <input type="text" name="email" value="${admin.email!''}"/>
 <br>
-Description: <input name="description" value="${todo.description!''}"/>
+Password: <input type="password" name="password" value="${admin.password!''}"/>
+<br>
+First Name: <input type="text" name="firstName" value="${admin.firstName!''}"/>
+<br>
+Password: <input type="text" name="lastName" value="${admin.lastName!''}"/>
 <br>
 <input type="submit" value="save">
 </form>

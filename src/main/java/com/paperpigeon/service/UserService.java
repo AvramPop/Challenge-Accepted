@@ -3,7 +3,6 @@ package com.paperpigeon.service;
 
 import com.paperpigeon.dto.UserDTO;
 import com.paperpigeon.exception.ObjectAlreadyInDB;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -25,5 +24,5 @@ public interface UserService {
 
     UserDTO update(UserDTO card);
 
-    boolean login(UserDTO userToLogin);
+    boolean checkCredentials(UserDTO userToLogin);
 }

@@ -2,8 +2,6 @@ package com.paperpigeon.service;
 
 
 import com.paperpigeon.dto.CardDTO;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 /**
@@ -19,6 +17,8 @@ public interface CardService {
     CardDTO delete(String id);
 
     List<CardDTO> findAll();
+
+    List<CardDTO> findByTitle(String title);
 
     CardDTO findById(String id);
 

@@ -3,7 +3,6 @@ package com.paperpigeon.mongo_service;
 import com.paperpigeon.dto.OrderDTO;
 import com.paperpigeon.exception.CardNotFoundException;
 import com.paperpigeon.exception.UserNotFoundException;
-import com.paperpigeon.model.Card;
 import com.paperpigeon.repository.CardRepository;
 import com.paperpigeon.repository.OrderRepository;
 import com.paperpigeon.repository.UserRepository;
